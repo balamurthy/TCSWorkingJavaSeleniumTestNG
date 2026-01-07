@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-01-05T00:42:39 IST" name="Default suite" finished-at="2026-01-05T00:42:53 IST" duration-ms="13724">
+    <groups>
+    </groups>
+    <test started-at="2026-01-05T00:42:39 IST" name="Default test" finished-at="2026-01-05T00:42:53 IST" duration-ms="13724">
+      <class name="testNGTests.ShadowDomTests">
+        <test-method signature="testShadowDom()[pri:0, instance:testNGTests.ShadowDomTests@393671df]" started-at="2026-01-05T00:42:39 IST" name="testShadowDom" finished-at="2026-01-05T00:42:45 IST" duration-ms="6216" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testShadowDom -->
+        <test-method signature="testShadowDomRootOnChromeDownloadPage()[pri:0, instance:testNGTests.ShadowDomTests@393671df]" started-at="2026-01-05T00:42:45 IST" name="testShadowDomRootOnChromeDownloadPage" finished-at="2026-01-05T00:42:46 IST" duration-ms="815" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testShadowDomRootOnChromeDownloadPage -->
+        <test-method signature="testShadowDomSeleniumPlayground()[pri:0, instance:testNGTests.ShadowDomTests@393671df]" started-at="2026-01-05T00:42:46 IST" name="testShadowDomSeleniumPlayground" finished-at="2026-01-05T00:42:51 IST" duration-ms="4888" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testShadowDomSeleniumPlayground -->
+        <test-method signature="testShadowDomWatir()[pri:0, instance:testNGTests.ShadowDomTests@393671df]" started-at="2026-01-05T00:42:51 IST" name="testShadowDomWatir" finished-at="2026-01-05T00:42:53 IST" duration-ms="1679" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testShadowDomWatir -->
+      </class> <!-- testNGTests.ShadowDomTests -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
