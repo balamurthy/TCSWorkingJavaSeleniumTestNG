@@ -1,18 +1,13 @@
-name: Selenium TestNG Maven CI
+name: Selenium TestNG with Chrome
 
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-  workflow_dispatch:   # manual trigger
+  workflow_dispatch:
 
-Jobs - name: Install Google Chrome
-  run : |
-    wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    sudo apt-get update
-    sudo apt-get install -y /tmp/chrome.deb
-  
+jobs:
   selenium-tests:
     runs-on: ubuntu-latest
 
@@ -20,27 +15,30 @@ Jobs - name: Install Google Chrome
       - name: Checkout source code
         uses: actions/checkout@v4
 
-      - name: Set up Java 17
+      - name: Set up Java 11
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '17'
+          java-version: '11'
           cache: maven
 
-      - name: Verify Java & Maven
+      # 🔹 Install Google Chrome
+      - name: Install Google Chrome
         run: |
-          java -version
-          mvn -version
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+          google-chrome --version
 
-      - name: Run Selenium TestNG tests
+      # 🔹 Run Selenium TestNG tests
+      - name: Run Selenium Tests
         run: mvn clean test
 
-      - name: Upload TestNG Reports
+      # 🔹 Upload reports even if tests fail
+      - name: Upload Test Reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: testng-reports
+          name: test-reports
           path: |
             target/surefire-reports
             test-output
-
