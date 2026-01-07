@@ -1,0 +1,38 @@
+name: Selenium Cucumber TestNG
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Java 11
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '11'
+          cache: maven
+
+      - name: Run tests
+        run: mvn clean test
+
+      - name: Upload Cucumber JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cucumber-json
+          path: target/cucumber-reports/*.json
+
+      - name: Upload Extent Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: extentreport.html
+          path: test-output
