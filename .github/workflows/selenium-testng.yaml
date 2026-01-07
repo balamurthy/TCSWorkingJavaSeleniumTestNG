@@ -7,9 +7,8 @@ on:
     branches: [ main ]
   workflow_dispatch:   # manual trigger
 
-jobs:
-- name: Install Google Chrome
-  run: |
+Jobs - name: Install Google Chrome
+  run : |
     wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     sudo apt-get update
     sudo apt-get install -y /tmp/chrome.deb
